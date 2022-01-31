@@ -1,0 +1,32 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} 
+{% block content%}
+<h1 align="center">Prédiction</h1>
+<form>
+    <div class="form-group">
+        <label for="name">Nom de l'établissement:</label>
+        <input type="text"class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="siret">SIRET:</label>
+        <input type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="adresse">Adresse :</label>
+        <input type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="code_postal">Code Postal :</label>
+        <input type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="ville">Commune :</label>
+        <input type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="type_activite">Type de l'activité :</label>
+        <input type="text" class="form-control">
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Lancer prédiction</button>
+</form>
+{% endblock %}
