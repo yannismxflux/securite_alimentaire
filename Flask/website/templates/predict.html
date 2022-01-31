@@ -1,0 +1,25 @@
+{% extends "base.html" %} {% block title %}Prédiction{% endblock %} 
+{% block content%}
+<h1 align="center">Résultat de la prédiction</h1>
+</br>
+<!-- <h3 align="center">{{message}}</h3> -->
+<div align="center">
+<h3>Voici la prédiction de l'évalution de l'hygiène de l'établissement suivant:</h3>
+</br>
+<ul>
+    <li>Nom de l'établissement: {{name}}</li>
+    <li>Numéro de SIRET: {{siret}}</li>
+    <li>Adresse: {{adresse}}</li>
+    <li>Code Postal: {{code_postal}}</li>
+    <li>Commune: {{ville}}</li>
+    <li>Type d'activité: {{type_activite}}</li>
+</ul>
+</div>
+<div class= result_predict style="background-color: darkgray; height: 120px; width: 250px; margin: auto;">
+    </br>
+</div>
+</br>
+<div align="center">
+    <button type="button" onclick="javascript:history.back()" class="btn btn-primary">Retour</button>
+</div>
+{% endblock %}
