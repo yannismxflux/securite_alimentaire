@@ -2,56 +2,46 @@
 {% block content%}
 <h1 align="center">Résultat de la prédiction</h1>
 </br>
-<!-- <h3 align="center">{{message}}</h3> -->
 <div align="center">
-<h3>Voici la prédiction de l'évalution de l'hygiène de l'établissement suivant:</h3>
-</br>
-<ul>
-    <li>Nom de l'établissement: {{name}}</li>
-    <li>Numéro de SIRET: {{siret}}</li>
-    <li>Adresse: {{adresse}}</li>
-    <li>Code Postal: {{code_postal}}</li>
-    <li>Commune: {{ville}}</li>
-    <li>Type d'activité: {{type_activite}}</li>
-</ul>
+    <h3>Voici la prédiction de l'évalution de l'hygiène de l'établissement suivant:</h3>
+    </br>
+    <ul>
+        <li>Nom de l'établissement: {{name}}</li>
+        <li>Numéro de SIRET: {{siret}}</li>
+        <li>Adresse: {{adresse}}</li>
+        <li>Code Postal: {{code_postal}}</li>
+        <li>Commune: {{ville}}</li>
+        <li>Type d'activité: {{type_activite}}</li>
+    </ul>
 </div>
-{% if prediction == 3 %}
-<div class= result_predict style="background-color: green; 
-                                height: 120px; 
-                                width: 250px; 
-                                margin: auto;">
-    <p>Très Satisfaisant</p>
+<div class="row d-flex justify-content-center" >
+    {% if prediction == 0 %}
+    <div class="col-md-4 text-center font-weight-bold" style="background-color: green;">
+        <p>TRES SATISFAISANT</p>
+    </div>
+    {% elif prediction == 1 %}
+    <div class="col-md-4 text-center font-weight-bold" style="background-color: yellow;">
+        <p>SATISFAISANT</p>
+
+    </div>
+    {% elif prediction == 2 %}
+    <div class="col-md-4 text-center font-weight-bold" style="background-color: orange">
+        <p>A AMELIORER</p>
+
+    </div>
+    {% elif prediction == 3 %}
+    <div class="col-md-4 text-center font-weight-bold" style="background-color: red;">
+        <p>A CORRIGER D'URGENCE</p>
+
+    </div>
+    {% else %}
+    <div class="col-md-4 text-center font-weight-bold" style="background-color: grey;">
+        <p>Aucune prédiction</p>
+    </div>
+    {% endif %}
 </div>
-{% elif prediction == 2 %}
-<div class= result_predict style="background-color: yellow; 
-                                height: 120px; 
-                                width: 250px; 
-                                margin: auto;">
-    <p>Satisfaisant</p>
-</div>
-{% elif prediction == 1 %}
-<div class= result_predict style="background-color: orange; 
-                                height: 120px; 
-                                width: 250px; 
-                                margin: auto;">
-    <p>A Améliorer</p>
-</div>
-{% elif prediction == 0 %}
-<div class= result_predict style="background-color: red; 
-                                height: 120px; 
-                                width: 250px; 
-                                margin: auto;">
-    <p>A Corriger d'Urgence</p>
-</div>
-{% else %}
-<div class= result_predict style="background-color: grey; 
-                                height: 120px; 
-                                width: 250px; 
-                                margin: auto;">
-</div>
-{% endif %}
 </br>
 <div align="center">
-    <button type="button" onclick="javascript:history.back()" class="btn btn-primary">Retour</button>
+    <button type="button" onclick="javascript:history.back()" class="btn btn-primary" style="background-color: #61161c;">Retour</button>
 </div>
 {% endblock %}

@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} 
 {% block content%}
-<h1 align="center">Entrer les infomrations pour la prédiction</h1>
+<h1 align="center">Entrer les informations pour la prédiction</h1>
 <form method="POST" action="/predict">
     <div class="form-group">
         <label for="name">Nom de l'établissement:</label>
@@ -27,6 +27,6 @@
         <input type="text" class="form-control" id="type_activite" name="type_activite">
     </div>
     <br />
-    <button type="submit" class="btn btn-primary">Lancer prédiction</button>
+    <button type="submit" class="btn btn-primary" style="background-color: #61161c;">Lancer prédiction</button>
 </form>
 {% endblock %}

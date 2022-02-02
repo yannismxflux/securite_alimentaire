@@ -21,7 +21,7 @@ def predict():
     code_postal = request.form['code_postal']
     ville = request.form['ville']
     type_activite = request.form['type_activite']
-    prediction = 3
+    prediction = 0
     return render_template("predict.html", user = 'ok',
                                         name=name, 
                                         siret=siret, 
