@@ -31,6 +31,7 @@
     <button type="submit" class="btn btn-primary" style="background-color: #61161c;">Lancer prédiction</button>
 </form>
 {% else %}
-    <h2>{{message}}</h2>
+    <h2>{{message}}</h2></br>
+        <button type="button" onclick="javascript:history.back()" class="btn btn-primary" style="background-color: #61161c;">Retour</button>
 {% endif %}
 {% endblock %}
