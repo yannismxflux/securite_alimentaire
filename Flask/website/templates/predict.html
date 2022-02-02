@@ -1,0 +1,47 @@
+{% extends "base.html" %} {% block title %}Prédiction{% endblock %} 
+{% block content%}
+<h1 align="center">Résultat de la prédiction</h1>
+</br>
+<div align="center">
+    <h3>Voici la prédiction de l'évalution de l'hygiène de l'établissement suivant:</h3>
+    </br>
+    <ul>
+        <li>Nom de l'établissement: {{name}}</li>
+        <li>Numéro de SIRET: {{siret}}</li>
+        <li>Adresse: {{adresse}}</li>
+        <li>Code Postal: {{code_postal}}</li>
+        <li>Commune: {{ville}}</li>
+        <li>Type d'activité: {{type_activite}}</li>
+    </ul>
+</div>
+<div class="row d-flex justify-content-center" >
+    {% if prediction == 0 %}
+    <div class="col-md-4 text-center font-weight-bold" style="background-color: green;">
+        <p>TRES SATISFAISANT</p>
+    </div>
+    {% elif prediction == 1 %}
+    <div class="col-md-4 text-center font-weight-bold" style="background-color: yellow;">
+        <p>SATISFAISANT</p>
+
+    </div>
+    {% elif prediction == 2 %}
+    <div class="col-md-4 text-center font-weight-bold" style="background-color: orange">
+        <p>A AMELIORER</p>
+
+    </div>
+    {% elif prediction == 3 %}
+    <div class="col-md-4 text-center font-weight-bold" style="background-color: red;">
+        <p>A CORRIGER D'URGENCE</p>
+
+    </div>
+    {% else %}
+    <div class="col-md-4 text-center font-weight-bold" style="background-color: grey;">
+        <p>Aucune prédiction</p>
+    </div>
+    {% endif %}
+</div>
+</br>
+<div align="center">
+    <button type="button" onclick="javascript:history.back()" class="btn btn-primary" style="background-color: #61161c;">Retour</button>
+</div>
+{% endblock %}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="stylesheet" type="text/css"
+            href="/website/static/style.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            crossorigin="anonymous"
+        />
+        
+
+        <title>{% block title %}Home{% endblock %}</title>
+    </head>
+    <body style="background-color:lightgray;">
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #61161c;">
+            <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbar"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                <div class="navbar-nav">
+                    {% if user == 'ok' %}
+                    <a class="nav-item nav-link" id="logout" href="/">Logout</a>
+                    {% endif %}
+
+                </div>
+            </div>
+        </nav>
+        <!-- Background image -->
+        <div
+            class="p-5 text-center bg-image"
+            style="
+                    background-image: url('static/images/background.jpg');
+                    background-size: cover;
+                    background-position-y: bottom;
+                    height: 300px;
+                    "
+        >
+            <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+                <div class="d-flex justify-content-center align-items-center h-100">
+                    <div class="text-white">
+                        <h1 class="mb-3">Direction Régionale de l'alimentation, </br>de l'agriculture </br>et de la forêt</h1>
+                        <h5 class="mb-3">Région Grand Est</h5>
+                        <h4 class="mb-3">Application de prédiction des inspections sanitaires</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- Background image -->
+        <div class="container" style="background-color:lightgray;
+                                        padding: 30px;">{% block content %} {% endblock %}</div>
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
