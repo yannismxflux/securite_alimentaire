@@ -11,7 +11,16 @@ views = Blueprint('views', __name__)
 
 @views.route('/home', methods=['GET', 'POST'])
 def home():
-    return render_template("home.html", user = 'ok')
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        user_file = open('website/static/utilisateurs.txt', 'r')
+        for line in user_file.readlines():
+            login_info = line.split()
+            if email == login_info[0] and password == login_info[1]:
+                return render_template("home.html", user = 'ok')
+        message = "Erreur de login"
+        return render_template("home.html", message = message)
 
 @views.route('/predict', methods=['GET', 'POST'])
 def predict():
