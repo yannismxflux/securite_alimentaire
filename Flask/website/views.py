@@ -1,7 +1,13 @@
 
+import pickle
 from flask import Blueprint, render_template, request
+import numpy as np
+from sklearn.preprocessing import OneHotEncoder
 
 views = Blueprint('views', __name__)
+
+# Load the model
+#model = pickle.load(open('website/finalized_model.sav', 'rb'))
 
 @views.route('/home', methods=['GET', 'POST'])
 def home():
@@ -15,10 +21,12 @@ def predict():
     code_postal = request.form['code_postal']
     ville = request.form['ville']
     type_activite = request.form['type_activite']
+    prediction = 3
     return render_template("predict.html", user = 'ok',
                                         name=name, 
                                         siret=siret, 
                                         adresse=adresse, 
                                         code_postal=code_postal,
                                         ville=ville,
-                                        type_activite=type_activite)
+                                        type_activite=type_activite,
+                                        prediction=prediction)

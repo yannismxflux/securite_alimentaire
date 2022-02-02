@@ -15,9 +15,41 @@
     <li>Type d'activité: {{type_activite}}</li>
 </ul>
 </div>
-<div class= result_predict style="background-color: darkgray; height: 120px; width: 250px; margin: auto;">
-    </br>
+{% if prediction == 3 %}
+<div class= result_predict style="background-color: green; 
+                                height: 120px; 
+                                width: 250px; 
+                                margin: auto;">
+    <p>Très Satisfaisant</p>
 </div>
+{% elif prediction == 2 %}
+<div class= result_predict style="background-color: yellow; 
+                                height: 120px; 
+                                width: 250px; 
+                                margin: auto;">
+    <p>Satisfaisant</p>
+</div>
+{% elif prediction == 1 %}
+<div class= result_predict style="background-color: orange; 
+                                height: 120px; 
+                                width: 250px; 
+                                margin: auto;">
+    <p>A Améliorer</p>
+</div>
+{% elif prediction == 0 %}
+<div class= result_predict style="background-color: red; 
+                                height: 120px; 
+                                width: 250px; 
+                                margin: auto;">
+    <p>A Corriger d'Urgence</p>
+</div>
+{% else %}
+<div class= result_predict style="background-color: grey; 
+                                height: 120px; 
+                                width: 250px; 
+                                margin: auto;">
+</div>
+{% endif %}
 </br>
 <div align="center">
     <button type="button" onclick="javascript:history.back()" class="btn btn-primary">Retour</button>
