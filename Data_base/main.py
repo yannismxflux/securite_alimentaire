@@ -6,9 +6,10 @@ import creat_connect_sql_db as sql
 
 
 def reader():
-    file = pd.read_csv('export_alimconfiance.csv', sep=';', parse_dates=['Date_inspection'])
-    file.drop_duplicates(subset="SIRET", keep='first', inplace=True)
-
+    file = pd.read_csv('export_alimconfiance.csv', sep=';',encoding = "utf-8",dtype={'Code_postal':str}, parse_dates=['Date_inspection'])
+    # file.drop_duplicates(subset="SIRET", keep='first', inplace=True)
+    # file_etablissment=file["SIRET","APP_Libelle_etablissement","Adresse_2_UA","Code_postal","Libelle_commune", "geores"]
+    
 
     for i in file.columns:
         file[i] = file[i].replace(',','', regex=True)

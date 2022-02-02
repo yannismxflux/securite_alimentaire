@@ -2,11 +2,11 @@ import psycopg2
 import os
 
 def creat_db():
-    #establishing the connection
+    """establishing the connection"""
     try:
         conn = psycopg2.connect(database='ALIMCONFIANCE', user='postgres', password='password')
     except psycopg2.OperationalError:
-        os.system('sh scripts/creat_data_base.sh')
+        os.system('createdb -U postgres -e ALIMCONFIANCE')
         conn = psycopg2.connect(database='ALIMCONFIANCE', user='postgres', password='password')
 
     conn.autocommit = True
@@ -25,11 +25,10 @@ def creat_db():
 
     #Closing the connection
     conn.close()
-
 def insert_values():
 
     try:
-        conn = psycopg2.connect(database='ALIMCONFIANCE', user='postgres', password='password')
+        conn = psycopg2.connect(database='ALIMCONFIANCE_yannis', user='postgres', password='password')
     except psycopg2.OperationalError:
         print("ERROR..........")
         return
