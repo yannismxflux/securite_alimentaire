@@ -28,7 +28,7 @@ def creat_db():
 def insert_values():
 
     try:
-        conn = psycopg2.connect(database='ALIMCONFIANCE_yannis', user='postgres', password='password')
+        conn = psycopg2.connect(database='ALIMCONFIANCE', user='postgres', password='password')
     except psycopg2.OperationalError:
         print("ERROR..........")
         return
@@ -37,15 +37,13 @@ def insert_values():
 
     #read the script that insert into data base
     with open('CSV_ETABLISSEMENT.csv') as f:
-        cursor.copy_from(f, 'etablissement', sep=',')
-        cursor.execute('ALTER TABLE ETABLISSEMENT DROP COLUMN erro1')
+        cursor.copy_from(f, 'etablissement', sep=';')
         conn.commit()
         f.close()
 
 
     with open('CSV_INSPECTION.csv') as f:
-        cursor.copy_from(f, 'inspection', sep=',')
-        cursor.execute('ALTER TABLE INSPECTION DROP COLUMN erro1')
+        cursor.copy_from(f, 'inspection', sep=';')
         conn.commit()
         f.close()
 

@@ -1,24 +1,23 @@
 
-CREATE DATABASE ALIMCONFIANCE_yannis;
-\c ALIMCONFIANCE_yannis;
-
 CREATE TABLE ETABLISSEMENT (
-  siret VARCHAR(42),
-  nom_etablissment VARCHAR(42),
-  adresse VARCHAR(42),
+  siret VARCHAR(14),
+  nom_etablissment VARCHAR(200),
+  adresse VARCHAR(100),
+  code_postal VARCHAR(42),
+  ville VARCHAR(42),
+  geo_res VARCHAR(42),
+  ods_type_activite VARCHAR(150),
   agrement VARCHAR(42),
-   VARCHAR(42),
-  PRIMARY KEY (id_etablissement)
+  PRIMARY KEY (siret)
 );
 
 CREATE TABLE INSPECTION (
   id_inspection VARCHAR(42),
-  date_inspection VARCHAR(42),
   synthese_eval VARCHAR(42),
-  activite VARCHAR(42),
+  activite VARCHAR(250),
+  date_inspection DATE,
   siret VARCHAR(42),
   PRIMARY KEY (id_inspection)
 );
 
-ALTER TABLE INSPECTION ADD FOREIGN KEY (id_etablissement) REFERENCES ETABLISSEMENT (id_etablissement);
-
+ALTER TABLE INSPECTION ADD FOREIGN KEY (siret) REFERENCES ETABLISSEMENT (siret);
