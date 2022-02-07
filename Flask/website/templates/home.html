@@ -1,15 +1,16 @@
-{% extends "base.html" %} {% block title %}Home{% endblock %} 
+{% extends "base.html" %} {% block title %}Home{% endblock %}
 {% block content%}
 <h1 align="center">Entrer les informations pour la prédiction</h1>
 <form method="POST" action="/predict">
     <div class="form-group">
-        <label for="name">Nom de l'établissement:</label>
-        <input type="text"class="form-control" id="name" name="name">
-    </div>
-    <div class="form-group">
-        <label for="siret">SIRET:</label>
+        <label for="siret">Siret:</label>
         <input type="text" class="form-control" id="siret" name="siret">
     </div>
+    <div class="form-group">
+        <label for="name">Nom de l'établissement:</label>
+        <input type="text" class="form-control" id="name" name="name">
+    </div>
+    
     <div class="form-group">
         <label for="adresse">Adresse :</label>
         <input type="text" class="form-control" id="adresse" name="adresse">
@@ -26,6 +27,20 @@
         <label for="type_activite">Type de l'activité :</label>
         <input type="text" class="form-control" id="type_activite" name="type_activite">
     </div>
+    <div class="form-group">
+        <p>L'etablissment est il agrée ?</p>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="agrement" id="inlineRadio1" value="1">
+            <label class="form-check-label" for="inlineRadio1">Oui</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="agrement" id="inlineRadio2" value="0">
+            <label class="form-check-label" for="inlineRadio2">Non</label>
+        </div>
+    </div>
+
+
+
     <br />
     <button type="submit" class="btn btn-primary" style="background-color: #61161c;">Lancer prédiction</button>
 </form>
