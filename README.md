@@ -1,5 +1,5 @@
 # securite_alimentaire
-Cet outil permet de collecter, **structurer **et **stocker **les données dans une base de données relationnelles ainsi que **prédire **le niveau d'hygiène dans les établissements des établissements de production, de transformation et de distribution de vos produits alimentaires.
+Cet outil permet de collecter, **structurer **et **stocker **les données dans une base de données relationnelles ainsi que **prédire **le niveau d'hygiène dans les établissements de production, de transformation et de distribution de vos produits alimentaires.
 
 On distingue quatre niveau d'hygiène :
 
